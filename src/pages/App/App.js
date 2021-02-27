@@ -4,7 +4,6 @@ import {
   Container,
   responsiveFontSizes,
   ThemeProvider,
-  Typography,
 } from '@material-ui/core';
 import { theme } from '../../utils';
 import Header from '../../components/Header/Header';
