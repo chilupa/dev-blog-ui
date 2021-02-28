@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <Box>
       <Box pt={2} pb={2}>
-        <Grid container xs={12}>
+        <Grid container xs={12} spacing={2}>
           <Grid item xs={2}>
             <Typography variant="body1" component="span">
               Site name
