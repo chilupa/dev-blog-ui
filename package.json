@@ -18,8 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "precommit": "node_modules/eslint/bin/eslint.js .",
-    "prepush": "node_modules/eslint/bin/eslint.js ."
+    "precommit": "npm test",
+    "prepush": "npm test"
   },
   "eslintConfig": {
     "extends": [
