@@ -4,7 +4,7 @@ import { SearchOutlined } from '@material-ui/icons';
 
 const useStyles = makeStyles(() => ({
   searchBar: {
-    width: 220,
+    width: '100%',
   },
 }));
 const Search = () => {
@@ -35,7 +35,7 @@ const Search = () => {
     };
   }, []);
   return (
-    <Box component="span" pl={8}>
+    <Box component="span">
       <TextField
         className={classes.searchBar}
         color="secondary"
