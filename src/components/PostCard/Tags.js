@@ -4,12 +4,12 @@ import { Box, Typography } from '@material-ui/core';
 const Tags = ({ tags }) => {
   return (
     tags && (
-      <Box pt={1}>
+      <Box pt={1} data-testid="tags">
         {tags.map((tag, index) => (
           <Box component="span" key={index}>
-            <Typography
-              component="body2"
-              color="textSecondary">{`#${tag} `}</Typography>
+            <Typography component="span" variant="body2" color="textSecondary">
+              {`#${tag} `}
+            </Typography>
           </Box>
         ))}
       </Box>

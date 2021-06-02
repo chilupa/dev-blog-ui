@@ -2,9 +2,9 @@ import React from 'react';
 import { Box, Typography } from '@material-ui/core';
 
 const Bookmark = ({ likeCount, bookmarkCount }) => (
-  <Box component="span" pl={likeCount === 0 ? 0 : 2}>
+  <Box data-testid="bookmark" component="span" pl={likeCount === 0 ? 0 : 2}>
     {bookmarkCount > 0 && (
-      <Typography variant="body2" component="span">
+      <Typography variant="caption" component="span" color="secondary">
         {bookmarkCount > 1
           ? `${bookmarkCount} Bookmarks`
           : `${bookmarkCount} Bookmark`}
