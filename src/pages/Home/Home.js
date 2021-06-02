@@ -4,6 +4,7 @@ import { posts } from '../../mocks/posts';
 import Posts from './Posts';
 import Promotion from './Promotion';
 import Menu from './Menu';
+import SimpleCard from '../../components/SimpleCard/SimpleCard';
 
 const Home = () => {
   return (
