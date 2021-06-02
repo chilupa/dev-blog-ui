@@ -8,7 +8,7 @@ import Menu from './Menu';
 const Home = () => {
   return (
     <Box>
-      <Grid container xs={12} spacing={2}>
+      <Grid container spacing={2}>
         <Grid item xs={3}>
           <Box>
             <Menu />
