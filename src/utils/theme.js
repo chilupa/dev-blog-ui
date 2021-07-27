@@ -16,6 +16,10 @@ const theme = createMuiTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(','),
+    button: {
+      textTransform: 'none',
+      fontWeight: 'bold',
+    },
   },
 });
 
