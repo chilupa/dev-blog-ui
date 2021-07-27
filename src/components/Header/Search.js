@@ -35,9 +35,11 @@ const Search = () => {
     };
   }, []);
   return (
-    <Box component="span">
+    <Box>
       <TextField
+        size="small"
         className={classes.searchBar}
+        variant="outlined"
         color="secondary"
         placeholder={`Search "${placeholderText[index]}"`}
         id="input-with-icon-textfield"
