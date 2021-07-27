@@ -33,7 +33,7 @@ const Search = () => {
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [placeholderText.length]);
   return (
     <Box>
       <TextField
