@@ -5,6 +5,6 @@ import Header from '../Header';
 describe('Header', () => {
   it('should render Header component', () => {
     const { getByText } = render(<Header />);
-    expect(getByText(/Dev Blog/i)).toBeInTheDocument();
+    expect(getByText(/Dev Blog/)).toBeInTheDocument();
   });
 });
