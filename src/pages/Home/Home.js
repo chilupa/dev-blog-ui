@@ -6,16 +6,16 @@ import Menu from '../../components/Menu/Menu';
 import PostCard from '../../components/PostCard/PostCard';
 
 const Home = () => {
-  const isMobileOrTabletDevice = useMediaQuery(
+  const isMobileOrTablet = useMediaQuery(
     (theme) => theme.breakpoints.up('sm') || theme.breakpoints.up('md')
   );
   return (
     <Box>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={3} md={3} lg={3}>
-          {isMobileOrTabletDevice && <Menu />}
-          {isMobileOrTabletDevice && <Box pt={1}>Tags</Box>}
-          {isMobileOrTabletDevice && <Box pt={1}>Some Ad</Box>}
+          {isMobileOrTablet && <Menu />}
+          {isMobileOrTablet && <Box pt={1}>Tags</Box>}
+          {isMobileOrTablet && <Box pt={1}>Some Ad</Box>}
         </Grid>
         <Grid item xs={12} sm={6} md={6} lg={6}>
           {posts.map((post, index) => (
