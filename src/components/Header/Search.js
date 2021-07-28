@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Box, InputAdornment, makeStyles, TextField } from '@material-ui/core';
 import { SearchOutlined } from '@material-ui/icons';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles({
   searchBar: {
-    width: '100%',
+    width: 300,
   },
-}));
+});
+
 const Search = () => {
   const classes = useStyles();
   const [index, setIndex] = useState(0);

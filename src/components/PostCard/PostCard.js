@@ -15,9 +15,19 @@ const useStyles = makeStyles(() => ({
   cardHeader: {
     paddingBottom: '0px',
   },
+  title: {
+    fontWeight: 'bold',
+  },
 }));
 
-const PostCard = ({ title, description, tags, likeCount, bookmarkCount }) => {
+const PostCard = ({
+  title,
+  description,
+  tags,
+  likeCount,
+  bookmarkCount,
+  userName,
+}) => {
   const classes = useStyles();
   return (
     <Box pb={1}>
@@ -26,10 +36,10 @@ const PostCard = ({ title, description, tags, likeCount, bookmarkCount }) => {
           className={classes.cardHeader}
           avatar={
             <Avatar aria-label="recipe" className={classes.avatar}>
-              P
+              {userName.slice(0, 1)}
             </Avatar>
           }
-          title={<Typography variant="body1">Pavan Chilukuri</Typography>}
+          title={<Typography variant="body1">{userName}</Typography>}
           subheader={
             <Typography variant="caption" color="textSecondary">
               Feb 23, 2021
@@ -37,7 +47,12 @@ const PostCard = ({ title, description, tags, likeCount, bookmarkCount }) => {
           }
         />
         <CardContent className={classes.cardContent}>
-          <Typography variant="h6" component="h1" color="primary">
+          <Typography
+            className={classes.title}
+            variant="h6"
+            component="h1"
+            color="primary"
+          >
             {title}
           </Typography>
           {description && (
