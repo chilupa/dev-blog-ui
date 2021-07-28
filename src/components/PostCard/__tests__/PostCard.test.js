@@ -12,6 +12,7 @@ describe('PostCard', () => {
       tags: [],
       likeCount: 2,
       bookmarkCount: 1,
+      userName: 'John Doe',
     };
     const { getByText } = render(<PostCard {...props} />);
     expect(getByText('xyz')).toBeInTheDocument();
