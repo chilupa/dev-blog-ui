@@ -2,17 +2,15 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { Avatar, Box, CardHeader, makeStyles } from '@material-ui/core';
+import { Box, CardHeader, makeStyles } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 import Like from './Like';
 import Bookmark from './Bookmark';
 import Tags from './Tags';
 import { useHistory } from 'react-router-dom';
+import Avatar from '../Avatar/Avatar';
 
 const useStyles = makeStyles(() => ({
-  avatar: {
-    backgroundColor: red[500],
-  },
   cardHeader: {
     paddingBottom: '0px',
   },
@@ -45,11 +43,7 @@ const PostCard = ({
       <Card className={classes.card} onClick={handlePostClick}>
         <CardHeader
           className={classes.cardHeader}
-          avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
-              {userName.slice(0, 1)}
-            </Avatar>
-          }
+          avatar={<Avatar userName={userName} />}
           title={<Typography variant="body1">{userName}</Typography>}
           subheader={
             <Typography variant="caption" color="textSecondary">
