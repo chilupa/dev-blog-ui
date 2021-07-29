@@ -7,7 +7,6 @@ import {
   useMediaQuery,
 } from '@material-ui/core';
 import SiteTitle from './SiteTitle';
-import Search from './Search';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import CreatePostButton from './CreatePostButton';
 

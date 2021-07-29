@@ -3,7 +3,6 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { Box, CardHeader, makeStyles } from '@material-ui/core';
-import { red } from '@material-ui/core/colors';
 import Like from './Like';
 import Bookmark from './Bookmark';
 import Tags from './Tags';
