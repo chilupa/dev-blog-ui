@@ -29,7 +29,7 @@ const Search = () => {
         return prevIndex + 1;
       });
     };
-    setInterval(timer, 4000);
+    setInterval(timer, 2000);
 
     return () => {
       clearInterval(timer);
