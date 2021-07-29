@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   Container,
   responsiveFontSizes,
@@ -7,13 +6,21 @@ import {
 } from '@material-ui/core';
 import { theme } from '../../utils';
 import Header from '../../components/Header/Header';
-import Home from '../Home/Home';
+
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Suspense } from 'react';
+import Loader from './Loader';
+import Routes from './Routes';
 
 const App = () => (
   <ThemeProvider theme={responsiveFontSizes(theme)}>
     <Container maxWidth="lg">
-      <Header />
-      <Home />
+      <Router>
+        <Header />
+        <Suspense fallback={<Loader />}>
+          <Routes />
+        </Suspense>
+      </Router>
     </Container>
   </ThemeProvider>
 );

@@ -7,6 +7,7 @@ import { red } from '@material-ui/core/colors';
 import Like from './Like';
 import Bookmark from './Bookmark';
 import Tags from './Tags';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
   avatar: {
@@ -18,6 +19,9 @@ const useStyles = makeStyles(() => ({
   title: {
     fontWeight: 'bold',
   },
+  card: {
+    cursor: 'pointer',
+  },
 }));
 
 const PostCard = ({
@@ -27,11 +31,18 @@ const PostCard = ({
   likeCount,
   bookmarkCount,
   userName,
+  id,
 }) => {
   const classes = useStyles();
+  const history = useHistory();
+
+  const handlePostClick = () => {
+    history.push(`/view/${id}`);
+  };
+
   return (
     <Box pb={1}>
-      <Card>
+      <Card className={classes.card} onClick={handlePostClick}>
         <CardHeader
           className={classes.cardHeader}
           avatar={

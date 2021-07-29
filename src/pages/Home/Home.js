@@ -4,13 +4,14 @@ import { posts } from '../../mocks/posts';
 import Promotion from './Promotion';
 import Menu from '../../components/Menu/Menu';
 import PostCard from '../../components/PostCard/PostCard';
+import Page from '../../components/Page/Page';
 
 const Home = () => {
   const isMobileOrTablet = useMediaQuery(
     (theme) => theme.breakpoints.up('sm') || theme.breakpoints.up('md')
   );
   return (
-    <Box>
+    <Page>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={3} md={3} lg={3}>
           {isMobileOrTablet && <Menu />}
@@ -32,7 +33,7 @@ const Home = () => {
           </Box>
         </Grid>
       </Grid>
-    </Box>
+    </Page>
   );
 };
 

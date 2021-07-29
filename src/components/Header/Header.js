@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Box,
-  Button,
   Divider,
   Grid,
   IconButton,
@@ -10,6 +9,7 @@ import {
 import SiteTitle from './SiteTitle';
 import Search from './Search';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import CreatePostButton from './CreatePostButton';
 
 const Header = () => {
   const isMobileOrTablet = useMediaQuery(
@@ -24,16 +24,12 @@ const Header = () => {
           </Grid>
           {isMobileOrTablet && (
             <Grid item xs={6} sm={6} md={4} lg={3}>
-              <Search />
+              {/* <Search /> */}
             </Grid>
           )}
           <Grid item xs={6} sm={4} md={4} lg={7}>
             <Box display="flex" justifyContent="flex-end" alignItems="center">
-              <Box>
-                <Button color="primary" variant="contained">
-                  Create Post
-                </Button>
-              </Box>
+              <CreatePostButton />
               <Box>
                 <IconButton aria-label="delete">
                   <NotificationsIcon />
