@@ -30,6 +30,7 @@ const PostCard = ({
   bookmarkCount,
   userName,
   id,
+  postDate,
 }) => {
   const classes = useStyles();
   const history = useHistory();
@@ -47,7 +48,7 @@ const PostCard = ({
           title={<Typography variant="body1">{userName}</Typography>}
           subheader={
             <Typography variant="caption" color="textSecondary">
-              Feb 23, 2021
+              {postDate}
             </Typography>
           }
         />
@@ -60,11 +61,11 @@ const PostCard = ({
           >
             {title}
           </Typography>
-          {description && (
+          {/* {description && (
             <Typography variant="body1" component="p">
               {description}
             </Typography>
-          )}
+          )} */}
           <Tags tags={tags} />
           <Box pt={1}>
             <Like likeCount={likeCount} />

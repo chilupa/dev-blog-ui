@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Box,
   Chip,
@@ -35,6 +35,9 @@ const ViewPost = () => {
 
   const post = posts.find(({ id }) => id === JSON.parse(postId));
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Page>
       <Grid container>
@@ -80,7 +83,7 @@ const ViewPost = () => {
                 </Box>
                 <Box pl={2}>
                   <Typography variant="body2" color="textSecondary">
-                    Feb 17
+                    {post.postDate}
                   </Typography>
                 </Box>
               </Box>
