@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Box, InputAdornment, makeStyles, TextField } from '@material-ui/core';
 import { SearchOutlined } from '@material-ui/icons';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles({
   searchBar: {
-    width: '100%',
+    width: 300,
   },
-}));
+});
+
 const Search = () => {
   const classes = useStyles();
   const [index, setIndex] = useState(0);
@@ -28,16 +29,18 @@ const Search = () => {
         return prevIndex + 1;
       });
     };
-    setInterval(timer, 4000);
+    setInterval(timer, 2000);
 
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [placeholderText.length]);
   return (
-    <Box component="span">
+    <Box>
       <TextField
+        size="small"
         className={classes.searchBar}
+        variant="outlined"
         color="secondary"
         placeholder={`Search "${placeholderText[index]}"`}
         id="input-with-icon-textfield"

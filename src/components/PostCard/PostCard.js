@@ -2,49 +2,70 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { Avatar, Box, CardHeader, makeStyles } from '@material-ui/core';
+import { Box, CardHeader, makeStyles } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 import Like from './Like';
 import Bookmark from './Bookmark';
 import Tags from './Tags';
+import { useHistory } from 'react-router-dom';
+import Avatar from '../Avatar/Avatar';
 
 const useStyles = makeStyles(() => ({
-  avatar: {
-    backgroundColor: red[500],
-  },
   cardHeader: {
     paddingBottom: '0px',
   },
+  title: {
+    fontWeight: 'bold',
+  },
+  card: {
+    cursor: 'pointer',
+  },
 }));
 
-const PostCard = ({ title, description, tags, likeCount, bookmarkCount }) => {
+const PostCard = ({
+  title,
+  description,
+  tags,
+  likeCount,
+  bookmarkCount,
+  userName,
+  id,
+  postDate,
+}) => {
   const classes = useStyles();
+  const history = useHistory();
+
+  const handlePostClick = () => {
+    history.push(`/view/${id}`);
+  };
+
   return (
     <Box pb={1}>
-      <Card>
+      <Card className={classes.card} onClick={handlePostClick}>
         <CardHeader
           className={classes.cardHeader}
-          avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
-              P
-            </Avatar>
-          }
-          title={<Typography variant="body1">Pavan Chilukuri</Typography>}
+          avatar={<Avatar userName={userName} />}
+          title={<Typography variant="body1">{userName}</Typography>}
           subheader={
             <Typography variant="caption" color="textSecondary">
-              Feb 23, 2021
+              {postDate}
             </Typography>
           }
         />
         <CardContent className={classes.cardContent}>
-          <Typography variant="h6" component="h1" color="primary">
+          <Typography
+            className={classes.title}
+            variant="h6"
+            component="h1"
+            color="primary"
+          >
             {title}
           </Typography>
-          {description && (
+          {/* {description && (
             <Typography variant="body1" component="p">
               {description}
             </Typography>
-          )}
+          )} */}
           <Tags tags={tags} />
           <Box pt={1}>
             <Like likeCount={likeCount} />
