@@ -1,13 +1,25 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
+import { Box, makeStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import SimpleCard from '../../components/SimpleCard/SimpleCard';
 
-const Promotion = ({ title, description }) => (
-  <Box>
-    <SimpleCard title={title} description={description} />
-  </Box>
-);
+const useStyles = makeStyles({
+  card: {
+    cursor: 'pointer',
+  },
+});
+const Promotion = ({ title, description }) => {
+  const classes = useStyles();
+  return (
+    <Box  className={classes.card}
+>
+      <SimpleCard
+        title={title}
+        description={description}
+      />
+    </Box>
+  );
+};
 
 Promotion.propTypes = {
   title: PropTypes.string,
