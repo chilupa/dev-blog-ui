@@ -23,7 +23,6 @@ const useStyles = makeStyles(() => ({
 
 const PostCard = ({
   title,
-  description,
   tags,
   likeCount,
   bookmarkCount,
@@ -60,11 +59,6 @@ const PostCard = ({
           >
             {title}
           </Typography>
-          {/* {description && (
-            <Typography variant="body1" component="p">
-              {description}
-            </Typography>
-          )} */}
           <Tags tags={tags} />
           <Box pt={1}>
             <Like likeCount={likeCount} />

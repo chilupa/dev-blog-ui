@@ -1,10 +1,11 @@
 import React from 'react';
 import { Box, Grid, useMediaQuery } from '@material-ui/core';
-import { posts } from '../../mocks/posts';
-import Promotion from './Promotion';
-import Menu from '../../components/Menu/Menu';
-import PostCard from '../../components/PostCard/PostCard';
-import Page from '../../components/Page/Page';
+import { posts } from 'mocks/posts';
+import Menu from 'components/Menu/Menu';
+import PostCard from 'components/PostCard/PostCard';
+import Page from 'components/Page/Page';
+import PromotionCard from '../../components/PromotionCard/PromotionCard';
+import promotions from 'mocks/promotions';
 
 const Home = () => {
   const isMobileOrTablet = useMediaQuery(
@@ -24,13 +25,11 @@ const Home = () => {
           ))}
         </Grid>
         <Grid item xs={12} sm={3} md={3} lg={3}>
-          <Promotion title="Promotion 1" description="Promotion description" />
-          <Box pt={2}>
-            <Promotion
-              title="Promotion 2"
-              description="Promotion description"
-            />
-          </Box>
+          {promotions.map((props) => (
+            <Box key={props.id} pb={1}>
+              <PromotionCard {...props} />
+            </Box>
+          ))}
         </Grid>
       </Grid>
     </Page>
