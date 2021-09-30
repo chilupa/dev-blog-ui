@@ -76,10 +76,10 @@ const ViewPost = () => {
               </Box>
               <Box pt={1} display="flex" alignItems="center">
                 <Box>
-                  <Avatar userName={post.userName} />
+                  <Avatar author={post.author} />
                 </Box>
                 <Box pl={1}>
-                  <Typography variant="body1">{post.userName}</Typography>
+                  <Typography variant="body1">{post.author}</Typography>
                 </Box>
                 <Box pl={2}>
                   <Typography variant="body2" color="textSecondary">

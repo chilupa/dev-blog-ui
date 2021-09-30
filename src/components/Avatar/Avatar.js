@@ -9,11 +9,11 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Avatar = ({ userName }) => {
+const Avatar = ({ author }) => {
   const classes = useStyles();
   return (
     <MuiAvatar aria-label="recipe" className={classes.avatar}>
-      {userName.slice(0, 1)}
+      {author?.slice(0, 1)}
     </MuiAvatar>
   );
 };

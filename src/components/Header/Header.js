@@ -1,21 +1,32 @@
 import React from 'react';
 import {
   Box,
+  colors,
   Divider,
   Grid,
   IconButton,
+  makeStyles,
   useMediaQuery,
 } from '@material-ui/core';
 import SiteTitle from './SiteTitle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import CreatePostButton from './CreatePostButton';
 
+const useStyles = makeStyles({
+  container: {
+    // position: 'sticky',
+    // top: 0,
+    // background: colors.grey[100],
+  },
+});
+
 const Header = () => {
+  const classes = useStyles();
   const isMobileOrTablet = useMediaQuery(
     (theme) => theme?.breakpoints.up('sm') || theme?.breakpoints.up('md')
   );
   return (
-    <Box>
+    <Box className={classes.container} fullWidth>
       <Box pt={1} pb={1}>
         <Grid container spacing={2} alignItems="center">
           <Grid item xs={6} sm={2} md={4} lg={2}>
@@ -38,9 +49,9 @@ const Header = () => {
           </Grid>
         </Grid>
       </Box>
-      <Box pb={2}>
+      {/* <Box pb={2}>
         <Divider />
-      </Box>
+      </Box> */}
     </Box>
   );
 };

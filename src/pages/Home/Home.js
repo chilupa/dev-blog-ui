@@ -6,11 +6,25 @@ import PostCard from 'components/PostCard/PostCard';
 import Page from 'components/Page/Page';
 import PromotionCard from '../../components/PromotionCard/PromotionCard';
 import promotions from 'mocks/promotions';
+import { useQuery } from '@apollo/client';
+import { GET_POSTS } from 'graphql/queries';
+import Loader from 'pages/App/Loader';
 
 const Home = () => {
+  const { loading, error, data } = useQuery(GET_POSTS);
+
   const isMobileOrTablet = useMediaQuery(
     (theme) => theme.breakpoints.up('sm') || theme.breakpoints.up('md')
   );
+  if (loading) {
+    return <Loader />;
+  }
+  if (error) {
+    return `Error! ${error.message}`;
+  }
+
+  console.log(`data`, data);
+
   return (
     <Page>
       <Grid container spacing={2}>
@@ -20,7 +34,7 @@ const Home = () => {
           {isMobileOrTablet && <Box pt={1}>Some Ad</Box>}
         </Grid>
         <Grid item xs={12} sm={6} md={6} lg={6}>
-          {posts.map((post, index) => (
+          {data.posts?.map((post, index) => (
             <PostCard key={index} {...post} />
           ))}
         </Grid>

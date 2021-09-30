@@ -26,7 +26,7 @@ const PostCard = ({
   tags,
   likeCount,
   bookmarkCount,
-  userName,
+  author,
   id,
   postDate,
 }) => {
@@ -42,8 +42,8 @@ const PostCard = ({
       <Card className={classes.card} onClick={handlePostClick}>
         <CardHeader
           className={classes.cardHeader}
-          avatar={<Avatar userName={userName} />}
-          title={<Typography variant="body1">{userName}</Typography>}
+          avatar={<Avatar author={author} />}
+          title={<Typography variant="body1">{author}</Typography>}
           subheader={
             <Typography variant="caption" color="textSecondary">
               {postDate}
