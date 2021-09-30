@@ -38,34 +38,38 @@ const PostCard = ({
   };
 
   return (
-    <Box pb={1}>
-      <Card className={classes.card} onClick={handlePostClick}>
-        <CardHeader
-          className={classes.cardHeader}
-          avatar={<Avatar author={author} />}
-          title={<Typography variant="body1">{author}</Typography>}
-          subheader={
-            <Typography variant="caption" color="textSecondary">
-              {postDate}
-            </Typography>
-          }
-        />
-        <CardContent className={classes.cardContent}>
-          <Typography
-            className={classes.title}
-            variant="h6"
-            component="h1"
-            color="primary"
-          >
-            {title}
-          </Typography>
-          <Tags tags={tags} />
-          <Box pt={1}>
-            <Like likeCount={likeCount} />
-            <Bookmark likeCount={likeCount} bookmarkCount={bookmarkCount} />
-          </Box>
-        </CardContent>
-      </Card>
+    <Box>
+      {title && (
+        <Box pb={1}>
+          <Card className={classes.card} onClick={handlePostClick}>
+            <CardHeader
+              className={classes.cardHeader}
+              avatar={<Avatar author={author} />}
+              title={<Typography variant="body1">{author}</Typography>}
+              subheader={
+                <Typography variant="caption" color="textSecondary">
+                  {postDate}
+                </Typography>
+              }
+            />
+            <CardContent className={classes.cardContent}>
+              <Typography
+                className={classes.title}
+                variant="h6"
+                component="h1"
+                color="primary"
+              >
+                {title}
+              </Typography>
+              <Tags tags={tags} />
+              <Box pt={1}>
+                <Like likeCount={likeCount} />
+                <Bookmark likeCount={likeCount} bookmarkCount={bookmarkCount} />
+              </Box>
+            </CardContent>
+          </Card>
+        </Box>
+      )}
     </Box>
   );
 };
