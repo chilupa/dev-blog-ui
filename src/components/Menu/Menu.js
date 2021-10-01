@@ -1,9 +1,9 @@
 import React from 'react';
-import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
-import LocalOfferRoundedIcon from '@material-ui/icons/LocalOfferRounded';
-import VideocamRoundedIcon from '@material-ui/icons/VideocamRounded';
-import MicRoundedIcon from '@material-ui/icons/MicRounded';
+import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import LocalOfferRoundedIcon from '@mui/icons-material/LocalOfferRounded';
+import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
+import MicRoundedIcon from '@mui/icons-material/MicRounded';
 
 const menuItems = [
   { icon: <HomeRoundedIcon />, label: 'Home' },

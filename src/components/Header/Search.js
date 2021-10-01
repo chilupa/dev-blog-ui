@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Box, InputAdornment, makeStyles, TextField } from '@material-ui/core';
-import { SearchOutlined } from '@material-ui/icons';
+import { Box, InputAdornment, TextField } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import { SearchOutlined } from '@mui/icons-material';
 
 const useStyles = makeStyles({
   searchBar: {

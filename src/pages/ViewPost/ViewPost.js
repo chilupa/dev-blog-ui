@@ -1,18 +1,11 @@
 import React, { useEffect } from 'react';
-import {
-  Box,
-  Chip,
-  Grid,
-  IconButton,
-  makeStyles,
-  Paper,
-  Typography,
-} from '@material-ui/core';
+import { Box, Chip, Grid, IconButton, Paper, Typography } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { useParams } from 'react-router-dom';
 import Page from '../../components/Page/Page';
 import { posts } from '../../mocks/posts';
-import FavoriteBorderRoundedIcon from '@material-ui/icons/FavoriteBorderRounded';
-import BookmarkBorderRoundedIcon from '@material-ui/icons/BookmarkBorderRounded';
+import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
+import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded';
 import Avatar from '../../components/Avatar/Avatar';
 const useStyles = makeStyles({
   title: {
@@ -50,7 +43,7 @@ const ViewPost = () => {
               <Count text={post.likeCount} />
             </Box>
             <Box pt={1}>
-              <IconButton>
+              <IconButton size="large">
                 <BookmarkBorderRoundedIcon />
               </IconButton>
               <Count text={post.bookmarkCount} />

@@ -1,5 +1,5 @@
 import { useMutation } from '@apollo/client';
-import { Button } from '@material-ui/core';
+import { Button } from '@mui/material';
 import { CREATE_POST, GET_POSTS } from 'graphql/queries';
 import React from 'react';
 import Page from '../../components/Page/Page';

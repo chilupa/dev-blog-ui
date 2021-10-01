@@ -1,15 +1,8 @@
 import React from 'react';
-import {
-  Box,
-  colors,
-  Divider,
-  Grid,
-  IconButton,
-  makeStyles,
-  useMediaQuery,
-} from '@material-ui/core';
+import { Box, Grid, IconButton, useMediaQuery } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import SiteTitle from './SiteTitle';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import CreatePostButton from './CreatePostButton';
 
 const useStyles = makeStyles({
@@ -41,7 +34,7 @@ const Header = () => {
             <Box display="flex" justifyContent="flex-end" alignItems="center">
               <CreatePostButton />
               <Box>
-                <IconButton aria-label="delete">
+                <IconButton aria-label="delete" size="large">
                   <NotificationsIcon />
                 </IconButton>
               </Box>

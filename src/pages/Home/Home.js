@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Grid, useMediaQuery } from '@material-ui/core';
-import { posts } from 'mocks/posts';
+import { Box, Grid, useMediaQuery } from '@mui/material';
 import Menu from 'components/Menu/Menu';
 import PostCard from 'components/PostCard/PostCard';
 import Page from 'components/Page/Page';

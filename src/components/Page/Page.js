@@ -1,7 +1,7 @@
 import React from 'react';
-import Fade from '@material-ui/core/Fade';
+import Fade from '@mui/material/Fade';
 
-import Box from '@material-ui/core/Box';
+import Box from '@mui/material/Box';
 
 const Page = ({ children, ...props }) => (
   <Fade in={true} {...{ timeout: 500 }}>
