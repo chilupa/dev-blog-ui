@@ -8,6 +8,7 @@ import promotions from 'mocks/promotions';
 import { useQuery } from '@apollo/client';
 import { GET_POSTS } from 'graphql/queries';
 import Loader from 'pages/App/Loader';
+import ErrorAlert from 'components/ErrorAlert/ErrorAlert';
 
 const Home = () => {
   const { loading, error, data } = useQuery(GET_POSTS);
@@ -19,7 +20,7 @@ const Home = () => {
     return <Loader />;
   }
   if (error) {
-    return `Error! ${error.message}`;
+    return <ErrorAlert />;
   }
 
   console.log(`data`, data);
