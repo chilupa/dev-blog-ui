@@ -5,5 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          yarn run lint
+      - name: Install modules
+        run: yarn
+      - name: Run ESLint
+        run: eslint --ext js src
