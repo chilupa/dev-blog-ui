@@ -29,7 +29,7 @@
     "test": "react-scripts test",
     "tc": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
-    "lint": "node_modules/.bin/eslint --ext js src"
+    "lint": "eslint --ext js src"
   },
   "eslintConfig": {
     "extends": [
@@ -50,7 +50,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^7.21.0"
+    "eslint": "^7.32.0"
   },
   "jest": {
     "collectCoverageFrom": [
