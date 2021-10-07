@@ -1,0 +1,9 @@
+name: Run lint for all the files in src folder
+'on': push
+jobs:
+  lint-runner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          npm run lint

@@ -35,18 +35,18 @@ const ViewPost = () => {
     <Page>
       <Grid container>
         <Grid item lg={2}>
-          <Box textAlign="center" display="flex" flexDirection="column">
+          <Box pt={2} textAlign="center" display="flex" flexDirection="column">
             <Box>
               <IconButton size="medium">
                 <FavoriteBorderRoundedIcon />
               </IconButton>
-              <Count text={post.likeCount} />
+              <Count text={post?.likeCount} />
             </Box>
             <Box pt={1}>
               <IconButton size="large">
                 <BookmarkBorderRoundedIcon />
               </IconButton>
-              <Count text={post.bookmarkCount} />
+              <Count text={post?.bookmarkCount} />
             </Box>
           </Box>
         </Grid>

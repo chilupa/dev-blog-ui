@@ -13,8 +13,6 @@ const CreatePost = () => {
     ],
   });
 
-  //console.log('props :>> ', props);
-
   const handleCreatePost = () => {
     addPost({
       variables: {
@@ -22,8 +20,6 @@ const CreatePost = () => {
         addPostDescription: 'some description',
         addPostAuthor: 'GraphQL',
         addPostPostDate: '20 Feb 2020',
-        addPostLikeCount: '1',
-        addPostBookmarkCount: '1',
         addPostTags: ['react', 'java', 'spring boot'],
       },
     });
