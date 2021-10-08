@@ -1,22 +1,19 @@
 import React from 'react';
-import { Box, Grid, IconButton, useMediaQuery } from '@mui/material';
+import { Box, Grid, IconButton, useMediaQuery, useTheme } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import SiteTitle from './SiteTitle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import CreatePostButton from './CreatePostButton';
 
 const useStyles = makeStyles({
-  container: {
-    // position: 'sticky',
-    // top: 0,
-    // background: colors.grey[100],
-  },
+  container: {},
 });
 
 const Header = () => {
+  const theme = useTheme();
   const classes = useStyles();
   const isMobileOrTablet = useMediaQuery(
-    (theme) => theme?.breakpoints.up('sm') || theme?.breakpoints.up('md')
+    theme?.breakpoints.up('sm') || theme?.breakpoints.up('md')
   );
   return (
     <Box className={classes.container} fullWidth>
