@@ -9,6 +9,3 @@ jobs:
         run: |
           npm install
           npm run lint
-        continue-on-error: false
-      # - name: Run ESLint
-      #   run: node_modules/.bin/eslint --ext js src
