@@ -54,7 +54,7 @@ const ViewPost = () => {
           <Paper elevation={3}>
             <Box p={2}>
               <Typography className={classes.title} variant="h5">
-                {post.title}
+                {post?.title}
               </Typography>
               <Box pt={2} pb={1}>
                 {post.tags.map((value, index) => (

@@ -4,6 +4,8 @@ import './index.css';
 import App from './pages/App/App';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store from 'redux/store';
 
 const client = new ApolloClient({
   uri: process.env.REACT_APP_BASE_URL,
@@ -13,7 +15,9 @@ const client = new ApolloClient({
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
