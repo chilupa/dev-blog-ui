@@ -23,8 +23,6 @@ const Home = () => {
     return <ErrorAlert />;
   }
 
-  console.log(`data`, data);
-
   return (
     <Page>
       <Grid container spacing={2}>
