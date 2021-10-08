@@ -3,6 +3,7 @@ import { Button } from '@mui/material';
 import { CREATE_POST, GET_POSTS } from 'graphql/queries';
 import React from 'react';
 import Page from '../../components/Page/Page';
+import { v4 as uuidv4 } from 'uuid';
 
 const CreatePost = () => {
   const [addPost] = useMutation(CREATE_POST, {
@@ -16,6 +17,7 @@ const CreatePost = () => {
   const handleCreatePost = () => {
     addPost({
       variables: {
+        addId: uuidv4(),
         addPostTitle: 'Fox news',
         addPostDescription: 'some description',
         addPostAuthor: 'GraphQL',

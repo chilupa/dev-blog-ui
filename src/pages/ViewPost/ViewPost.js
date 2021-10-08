@@ -26,7 +26,7 @@ const ViewPost = () => {
   const classes = useStyles();
   const { postId } = useParams();
 
-  const post = posts.find(({ id }) => id === JSON.parse(postId));
+  const post = posts.find(({ id }) => id === postId);
 
   useEffect(() => {
     window.scrollTo(0, 0);

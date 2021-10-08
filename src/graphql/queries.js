@@ -17,6 +17,7 @@ export const GET_POSTS = gql`
 
 export const CREATE_POST = gql`
   mutation AddPostMutation(
+    $addId: String
     $addPostTitle: String
     $addPostDescription: String
     $addPostAuthor: String
@@ -26,6 +27,7 @@ export const CREATE_POST = gql`
     $addPostTags: [String]
   ) {
     addPost(
+      id: $addId
       title: $addPostTitle
       description: $addPostDescription
       author: $addPostAuthor
@@ -34,6 +36,7 @@ export const CREATE_POST = gql`
       postDate: $addPostPostDate
       tags: $addPostTags
     ) {
+      id
       title
       description
       postDate
