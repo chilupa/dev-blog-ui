@@ -1,11 +1,12 @@
-name: Run lint for all the files in src folder
-'on': push
+name: Run lint and tests
+'on': [push, pull_request]
 jobs:
   lint-runner:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run ESLint
+      - name: Run ESLint and tests
         run: |
           npm install
           npm run lint
+          npm run test
