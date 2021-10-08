@@ -9,12 +9,13 @@ import { useQuery } from '@apollo/client';
 import { GET_POSTS } from 'graphql/queries';
 import Loader from 'pages/App/Loader';
 import ErrorAlert from 'components/ErrorAlert/ErrorAlert';
+import { useTheme } from '@mui/material/styles';
 
 const Home = () => {
   const { loading, error, data } = useQuery(GET_POSTS);
-
+  const theme = useTheme();
   const isMobileOrTablet = useMediaQuery(
-    (theme) => theme.breakpoints.up('sm') || theme.breakpoints.up('md')
+    theme.breakpoints.up('sm') || theme.breakpoints.up('md')
   );
   if (loading) {
     return <Loader />;
