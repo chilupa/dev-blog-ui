@@ -9,6 +9,8 @@ import Bookmark from './Bookmark';
 import Tags from './Tags';
 import { useHistory } from 'react-router-dom';
 import Avatar from '../Avatar/Avatar';
+import { useDispatch } from 'react-redux';
+import { setActivePost } from 'redux/reducers/post';
 
 const useStyles = makeStyles(() => ({
   cardHeader: {
@@ -22,34 +24,28 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const PostCard = ({
-  title,
-  tags,
-  likeCount,
-  bookmarkCount,
-  author,
-  id,
-  postDate,
-}) => {
+const PostCard = (props) => {
   const classes = useStyles();
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handlePostClick = () => {
-    history.push(`/view/${id}`);
+    history.push(`/view/${props.id}`);
+    dispatch(setActivePost(props));
   };
 
   return (
     <Box>
-      {title && (
+      {props.title && (
         <Box pb={1}>
           <Card className={classes.card} onClick={handlePostClick}>
             <CardHeader
               className={classes.cardHeader}
-              avatar={<Avatar author={author} />}
-              title={<Typography variant="body1">{author}</Typography>}
+              avatar={<Avatar author={props.author} />}
+              title={<Typography variant="body1">{props.author}</Typography>}
               subheader={
                 <Typography variant="caption" color="textSecondary">
-                  {postDate}
+                  {props.postDate}
                 </Typography>
               }
             />
@@ -60,12 +56,15 @@ const PostCard = ({
                 component="h1"
                 color="primary"
               >
-                {title}
+                {props.title}
               </Typography>
-              <Tags tags={tags} />
+              <Tags tags={props.tags} />
               <Box pt={1}>
-                <Like likeCount={likeCount} />
-                <Bookmark likeCount={likeCount} bookmarkCount={bookmarkCount} />
+                <Like likeCount={props.likeCount} />
+                <Bookmark
+                  likeCount={props.likeCount}
+                  bookmarkCount={props.bookmarkCount}
+                />
               </Box>
             </CardContent>
           </Card>
